@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>features &#8212; Streamlabs Chatbot Latest documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Settings" href="settings.html" />
+    <link rel="prev" title="Welcome to Streamlabs Chatbot documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="features">
+<h1>features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="console">
+<h2>Console<a class="headerlink" href="#console" title="Permalink to this headline">¶</a></h2>
+<p>On the console you will see all the incoming chat messages and the viewer list.
+In case you dislike seeing who’s watching you can simply click the small button left of the viewer list to dock it to the side.
+Aside from this at the top of the console you have access to Macro buttons which you can bind commands to.
+Further in the document this will be explained in more detail.</p>
+</div>
+<div class="section" id="dashboard">
+<h2>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">In order to access the full capability of the Dashboard you need to have your own Twitch account connected under Connections -&gt; Twitch Streamer.</div>
+<div class="line">This should be done if you followed the entire setup guide in the beginning.</div>
+</div>
+<p>This is where you will be able to change your Title &amp; Game, run commercials if you’re partnered with Twitch, have the bot automatically host streams of your choosing and where the bot will track news Followers, Subscribers, Raiders, Hosts and GameWisp Subscribers.
+We also have Raid Assist which is a system which allows you to reward viewers for joining you on a raid.
+The Session Event View which is located at the bottom of the Dashboard will have to be manually cleared before each stream by right clicking and Clearing the data. Otherwise new Hosts, Raids, Subs/Resubs won’t be logged if they’re done by the same person.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 28%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Status (message)</p></td>
+<td><p>!Status [24h] Charity Stream!</p></td>
+<td><p>{user} -&gt; Title has been updated: [24h] Charity Stream!</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Game (message)</p></td>
+<td><p>!Game The Last of Us</p></td>
+<td><p>{user} –&gt; Game has been updated: The Last of Us</p></td>
+</tr>
+<tr class="row-even"><td><p>!StartHost</p></td>
+<td><p>!StartHost</p></td>
+<td><p>{user} –&gt; Started Automated Hosting!</p></td>
+</tr>
+<tr class="row-odd"><td><p>!StopHost</p></td>
+<td><p>!StopHost</p></td>
+<td><p>{user} –&gt; Stopped Automated Hosting!</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<p>This is where you would start off if you want to create Commands. There are $parameters that you can use in the commands to achieve various result. More information on these parameters can be found on page XYZ.
+$Parameters &amp; Permission levels can be found further in to the documentation.</p>
+<p>There is also support for Command Grouping any group starting with [GAME] will only work when you’re actually playing the game which is defined behind the tag</p>
+<p>ex: [GAME] Pokemon Go</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 33%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Command Add (command) (permlvl) (response)</p></td>
+<td><p>!Command Add !Cookie +r All your cookies belong to me!</p></td>
+<td><p>{user} –&gt; Successfully added !Cookie. Permission:
+Regular - Message: All your cookies belong to me!</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Command Edit (command) (permlvl) and/or (response)</p></td>
+<td><p>!Command Edit !Cookie +a /me ate $count cookies!</p></td>
+<td><p>{user} –&gt; Successfully edited !Cookie.
+Permission: Everyone. Message: /me ate $count cookies!</p></td>
+</tr>
+<tr class="row-even"><td><p>!Command Remove (command)</p></td>
+<td><p>!Command Remove !Cookie</p></td>
+<td><p>{user} –&gt; Successfully removed !Cookie.</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Command Count (command) (num)</p></td>
+<td><p>!Command Count !cookie 10</p></td>
+<td><p>{user} –&gt; Successfully set the count for !cookie to 10</p></td>
+</tr>
+<tr class="row-even"><td><p>!Command Usage (command)
+(usage ex: SC,SW,SB,DC,DW,DB,CB,WB,A)</p></td>
+<td><p>!Command Usage !cookie SC</p></td>
+<td><p>{user} –&gt; Successfully set the usage of $command to $value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Enable (command) (true/false)</p></td>
+<td><p>!Enable !cookie true</p></td>
+<td><p>{user} –&gt; Succesfully enabled !Cookie</p></td>
+</tr>
+<tr class="row-even"><td><p>!Command Cooldown (command) (minutes)</p></td>
+<td><p>!Command Cooldown !cookie 2</p></td>
+<td><p>{user} –&gt; Successfully set the cooldown of !cookie to 2.</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Command UserCooldown (command) (minutes)</p></td>
+<td><p>!Command Cooldown !cookie 5</p></td>
+<td><p>{user} –&gt; Successfully set the user cooldown of !cookie to 5
+Regular - Message: All your cookies belong to me!</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<dl>
+<dt>Sharing Commands</dt><dd><div class="line-block">
+<div class="line">If you wish to share commands with your fellow streamer you can export them as .abcom (Streamlabs Chatbot Command) or .abcomg (Streamlabs Chatbot Command Group) by right clicking on a command. You have two options Export Command to export the single command or Export Group to Export all commands in that specific Group.</div>
+</div>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl>
+<dt>Importing Commands</dt><dd><div class="line-block">
+<div class="line">Importing a script is simple. Simply click the Import Button in the Command Tab, Navigate to the Zip File and Open it. Afterwards the bot will import the script for you and reload your scripts so it’s ready to go.</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="timers">
+<h2>Timers<a class="headerlink" href="#timers" title="Permalink to this headline">¶</a></h2>
+<p>This is where you will create your own Timers. These are messages that the bot will automatically post into chat after an interval of X minutes. The interval is completely based on the Setting at the top.</p>
+<p>All the timers will follow this same interval so this means the bot will post the first timer after the interval passes. Then it will start timing again, once the interval passes again it will post the second timer and so on eventually going through all of them and then starting back at the top.</p>
+<p>There is also support for Timer Grouping any group starting with [GAME] will only trigger when you’re actually playing the game which is defined behind the tag
+ex: [GAME] Pokemon Go</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 33%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Timer Add (name) (response)</p></td>
+<td><p>!Timer Add !Meow /me meows at $randusername</p></td>
+<td><p>{user} –&gt; Successfully added !meow. Message:
+/me meows at $randusername</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Timer Edit (name) (response)</p></td>
+<td><p>!Timer Edit !Meow /me growls at $randusername</p></td>
+<td><p>{user} –&gt; Successfully edited !Meow. Message: /me
+growls at $randusername</p></td>
+</tr>
+<tr class="row-even"><td><p>!Timer Remove (name)</p></td>
+<td><p>!Timer Remove !Meow</p></td>
+<td><p>{user} –&gt; Successfully removed !Meow.</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Activate (name) (true/false)</p></td>
+<td><p>!Activate !Meow false</p></td>
+<td><p>{user} –&gt; Succesfully de-activated !Cookie</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="quotes">
+<h2>Quotes<a class="headerlink" href="#quotes" title="Permalink to this headline">¶</a></h2>
+<p>This is where things you’ve said on stream can be stored. You can change the permission on who can request a random quote and who can add them for you through chat.</p>
+<p>You can also set the Cooldown and the Date Format. Every quote that gets added will automatically contain the Game &amp; Date when the quote was created. So whenever someone calls upon the random quote they’ll see when it happened and what you were playing at the time.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 33%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Quote Add (text)</p></td>
+<td><p>!Quote Add “I am a cat!” - AnkhHeart</p></td>
+<td><p>{user} –&gt; Succesfully added Quote #0: “I am a cat!”
+– AnkhHeart [Thief] [01/01/2015]</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Quote Edit (id) (text)</p></td>
+<td><p>!Quote Edit 0 “I am not a cat!” –
+AnkhHeart [Thief] [02/01/2015]</p></td>
+<td><p>{user} –&gt; Successfully edited Quote #0: “I am not a cat!”
+– AnkhHeart [Thief] [02/01/2015]</p></td>
+</tr>
+<tr class="row-even"><td><p>!Quote Remove (id)</p></td>
+<td><p>!Quote Remove 0</p></td>
+<td><p>{user} –&gt; Successfully deleted Quote #0</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Quote</p></td>
+<td><p>!Quote</p></td>
+<td><p>Quote #2: “Duct tape solves all problems!” - AnkhHeart</p></td>
+</tr>
+<tr class="row-even"><td><p>!Quote (id)</p></td>
+<td><p>!Quote 0</p></td>
+<td><p>Quote #0: “I am not a cat!” - AnkhHeart</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="extra-quote">
+<h2>Extra Quote<a class="headerlink" href="#extra-quote" title="Permalink to this headline">¶</a></h2>
+<p>Using the Extra Quotes you can create your own version of the Quote System to store things that aren’t specifically quotes. You can change the command, decide whether you want the Game &amp; Date to show or not, change the Permissions and Response.</p>
+<p>The underlying chat commands function the same way except if you do change the command you will also have to adjust the commands. By default this is !Gif if you change it to !Pun then you will have to use the commands starting with !Pun instead of !Gif.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 33%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Gif Add (text)</p></td>
+<td><p>!Gif Add <a class="reference external" href="http://tinyurl.com/randomGif.gif">http://tinyurl.com/randomGif.gif</a></p></td>
+<td><p>{user} –&gt; Succesfully added Gif #0:
+<a class="reference external" href="http://tinyurl.com/randomGif.gif">http://tinyurl.com/randomGif.gif</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>!Gif Edit (id) (text)</p></td>
+<td><p>!Gif Edit 0 <a class="reference external" href="http://tinyurl.com/randomGif2.gif">http://tinyurl.com/randomGif2.gif</a></p></td>
+<td><p>{user} –&gt; Successfully edited Gif #0:
+<a class="reference external" href="http://tinyurl.com/randomGif2.gif">http://tinyurl.com/randomGif2.gif</a></p></td>
+</tr>
+<tr class="row-even"><td><p>!Gif Remove (id)</p></td>
+<td><p>!Gif Remove 0</p></td>
+<td><p>{user} –&gt; Successfully deleted Gif #0</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Gif</p></td>
+<td><p>!Gif</p></td>
+<td><p>Gif #2: <a class="reference external" href="http://randomURL.com/randomGif15.gif">http://randomURL.com/randomGif15.gif</a></p></td>
+</tr>
+<tr class="row-even"><td><p>!Gif (id)</p></td>
+<td><p>!Gif 0</p></td>
+<td><p>Gif #0: <a class="reference external" href="http://randomURL.com/randomGif2.gif">http://randomURL.com/randomGif2.gif</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="counter">
+<h2>Counter<a class="headerlink" href="#counter" title="Permalink to this headline">¶</a></h2>
+<p>You can use the Counter to create a Death Counter, Hug Counter, Cookie Counter, etc.. It’s used to count anything. You can change the settings to your liking just be sure to keep a # in the Msg Template since this will be replaced by the number.</p>
+<p>In case you want to use the Counter but do not want to Capture the Display Area you can make use of a Death.txt file that is Located in the Bot’s Install Directory -&gt; Services -&gt; Twitch -&gt; Files Folder.</p>
+<p>This file will be generated when you’ve added your first death. If you want to manually create this file then simply type !death 0 in chat. This will create the file with 0 Deaths inside. Do mind though if you changed the Command to something else you will have to use that instead.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 33%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Death +</p></td>
+<td><p>!Death +</p></td>
+<td><p>[Increased] Deaths: 124</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Death -</p></td>
+<td><p>!Death -</p></td>
+<td><p>[Decreased] Deaths: 124</p></td>
+</tr>
+<tr class="row-even"><td><p>!Death (num)</p></td>
+<td><p>!Death 10</p></td>
+<td><p>[Set] Deaths: 10</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Death</p></td>
+<td><p>!Death</p></td>
+<td><p>Deaths: 10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="giveaway">
+<h2>Giveaway<a class="headerlink" href="#giveaway" title="Permalink to this headline">¶</a></h2>
+<p>This is where you will be able to start Give Aways. You can either have people join the Give Away for free or have them pay a fee to enter or have them pay per ticket using in Channel Currency.</p>
+<p>On the left side you will find all the people that are entered in the Give Away and how many tickets they possess. At the bottom of the window you will see all the messages posted by the Winner when one has been picked. That way you’ll know if the user is active in case chat is moving really quickly.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 29%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(see below)</p></td>
+<td><p>(see below)</p></td>
+<td><p>This starts a giveaway through chat with your own settings</p></td>
+</tr>
+<tr class="row-odd"><td><p>(see below)</p></td>
+<td><p>(see below)</p></td>
+<td><p>starts a very simple give away without tickets and entry costs</p></td>
+</tr>
+<tr class="row-even"><td><p>!Giveaway Close</p></td>
+<td><p>!Giveaway Close</p></td>
+<td><p>Prevents anyone from entering past this point</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Giveaway Winner</p></td>
+<td><p>!Giveaway Winner</p></td>
+<td><p>Randomly picks the winner for the Give Away</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sound-files">
+<h2>Sound Files<a class="headerlink" href="#sound-files" title="Permalink to this headline">¶</a></h2>
+<p>The Sound Files tab allows you to add sounds to the bot which you can attach to notifications and commands. From within this tab you are able to control the Volume and Votes. The votes option only applies to commands as it determines how many times a command has to be used before the sound goes off.</p>
+</div>
+<div class="section" id="currency">
+<h2>Currency<a class="headerlink" href="#currency" title="Permalink to this headline">¶</a></h2>
+<p>If the currency System is enabled everyone in your chat will start earning points based on your settings. These can be spent using the various other Systems in the bot such as Give Aways, SFX, Bet/Vote and enter Minigames.</p>
+<p>The bot also supports Streamlabs currency. For this you need to connect Streamlabs and enable this functionality in your currency settings inside of the bot.</p>
+<p>You can create up to four Ranking Trees: One for Viewers, Subscribers, Mods and GameWisp Subscribers. Ranks are only assigned whenever the bot pays out points or when you use !points add +viewers 1 for example.</p>
+<p>There is also room for customizing your own Payout amounts and intervals. This way you have full control over how many points people can accumulate in your stream.</p>
+<p>If the Offline Payout amount is set to 0 the bot will not pay out any points with the stream is offline. Also replace !points with your own custom currency command.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Points Add (name) (amount)</p></td>
+<td><p>!Points Add AnkhHeart 10000</p></td>
+<td><p>{user} –&gt; Successfully given AnkhHeart 10000 Points</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Points Remove (name) (amount)</p></td>
+<td><p>!Points Remove AnkhHeart 1234</p></td>
+<td><p>{user} –&gt; Successfully removed 1234 Points from AnkhHeart</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Points Add +Viewers/+active (amount)</p></td>
+<td><p>!Points Add +viewers 100</p></td>
+<td><p>{user} –&gt; Done giving 100 Points to everyone in chat</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Points Remove +Viewers/+active (amount)</p></td>
+<td><p>!Points Remove +viewers 100</p></td>
+<td><p>{user} –&gt; Done removing 100 Points from everyone in chat</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Points</p></td>
+<td><p>!Points</p></td>
+<td><p>AnkhHeart [Ninja Kitty] - Hours: 13 - Points: 1337</p></td>
+<td><p>EVERYONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Transfer</p></td>
+<td><p>!Transfer AnkhHeart MohammedBaraax1</p></td>
+<td><p>{user} –&gt; Successfully transferred currency from AnkhHeart to MohammedBaraax1</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="betting">
+<h2>Betting<a class="headerlink" href="#betting" title="Permalink to this headline">¶</a></h2>
+<p>Using the Betting System you can open up the ability for Viewers to bet on the outcome of situations. These options can be saved into a present and loaded later in case you are playing the same game again.</p>
+<p>If you wish to pick a winning option simply right click on the option and Pick it as the Winner. In case there are multiple correct Options this can be done for each of them.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Bet (id) (amount)</p></td>
+<td><p>!Bet 0 1000</p></td>
+<td><p>[No response to prevent chat spam from the bot]</p></td>
+<td><p>EVERYONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>!betting start (see below)</p></td>
+<td><p>!Betting Start (see below)</p></td>
+<td><p>This starts a custom betting session with custom settings</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Betting Start (see below)</p></td>
+<td><p>!Points Start (see below)</p></td>
+<td><dl class="simple">
+<dt>This starts a custom betting session that will use the settings</dt><dd><p>that have been set in the UI</p>
+</dd>
+</dl>
+</td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Betting Stop</p></td>
+<td><p>!Betting Stop</p></td>
+<td><p>Prevents anyone from betting once used</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Betting Abort</p></td>
+<td><p>!Betting Abort</p></td>
+<td><p>Cancels betting entirely and refunds anyone that has bet</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Betting Winner (id)</p></td>
+<td><p>!Betting Winner 0</p></td>
+<td><p>Picks the winning option and pay out points to everyone that bet on it</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="poll">
+<h2>Poll<a class="headerlink" href="#poll" title="Permalink to this headline">¶</a></h2>
+<p>The Poll System allows you to start a poll in your channel and have your viewers vote. In case you want people to spend points for each vote they cast then you can enable this by checking Allow Multi Voting and increase the limit.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Vote (id)</p></td>
+<td><p>!Vote 1</p></td>
+<td><p>[No response to prevent chat spam from the bot]</p></td>
+<td><p>EVERYONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Poll start (see below)</p></td>
+<td><p>!Poll Start (see below)</p></td>
+<td><p>This starts a custom poll with your own settings (overwrites UI settings)</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Poll Start (see below)</p></td>
+<td><p>!poll start (see below)</p></td>
+<td><p>This starts a custom poll that will use the settings
+that have been set in the UI</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Poll Stop</p></td>
+<td><p>!Poll Stop</p></td>
+<td><p>Ends the poll and posts the result in chat</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="minigames">
+<h2>Minigames<a class="headerlink" href="#minigames" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="heist">
+<h3>Heist<a class="headerlink" href="#heist" title="Permalink to this headline">¶</a></h3>
+<p>The Group Minigame allows you to create your own Minigame. You can start the customization by determining the Command that will be used, what the cooldown is, how many users have to enter before it starts, the Max amount someone can invest and who can Join.</p>
+<p>Aside from all those options you can set the Probability for each usergroup. This determines how much chance people within that usergroup have to survive. The Payout can also be set that way you can choose how much someone gets ontop of the amount they invested in the minigame.</p>
+<p>Finally you can fully customize all the messages that the bot will be posting in chat depending on the situation and how well/bad things are going for the ones that have joined. So if you wanted you could turn it into something completely different and not use the default Heist preset.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Heist (amount)</p></td>
+<td><p>!Heist 123</p></td>
+<td><dl class="simple">
+<dt>{user} is trying to get a team together in order to hit the nearest bank.</dt><dd><ul class="simple">
+<li><p>Everyone can Join!- In order to join type !Heist (amount).</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><p>JOIN
+PERMISSION</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="duel">
+<h3>Duel<a class="headerlink" href="#duel" title="Permalink to this headline">¶</a></h3>
+<p>The Duel minigame allows viewers to challenge each other to a battle. The bot will process a secretive battle in the background, the winner will receive twice the cost. The loser will get nothing.</p>
+<p>Aside from this both the challenger and challenged will go on cooldown once their fight concludes and can no longer challenge or be challenged till their cooldown expires.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!challenge (name)</p></td>
+<td><p>!Challenge ankhheart</p></td>
+<td><p>{user} has challenged {target} to a fight! Type !challenge {user}
+to accept the challenge!</p></td>
+<td><p>JOIN
+PERMISSION</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="free-for-all">
+<h3>Free-For-All<a class="headerlink" href="#free-for-all" title="Permalink to this headline">¶</a></h3>
+<p>In the Free for All minigame multiple viewers can face off against one another. You can determine how many people end up surviving. The more people join the larger the prize pool becomes and the winner walks away with the pot. In more than one person can survive then it gets split amongst the survivors.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!ffa</p></td>
+<td><p>!ffa</p></td>
+<td><p>The arena is now open! Type !ffa to join!</p></td>
+<td><p>JOIN
+PERMISSION</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="boss-battle">
+<h3>Boss Battle<a class="headerlink" href="#boss-battle" title="Permalink to this headline">¶</a></h3>
+<p>This allows you to create custom bosses for your viewers to fight based on how many people join. The difficulty / loot is completely up to you do mind that balancing it fairly is also your responsibility.</p>
+<dl>
+<dt>The Basics:</dt><dd><div class="line-block">
+<div class="line">Balancing of the minigame is completely up to you so let’s go down some of the basic concepts so you know how it functions in the background. That way you can determine what values would be best.</div>
+<div class="line">1) Players sign up for the battle and get a Stat sheet assigned based on their permission</div>
+<div class="line">2) Boss gets picked based on the group size (Between Min – Max Entries)</div>
+<div class="line">3) The fight starts against the boss</div>
+<div class="line">4) Damage Calculation: (User Attack – Target Defense) ex: 10 att – 5 def = 5 dmg that the target will receive</div>
+<div class="line">5) Attack order: The boss has to be attacked 3 times before it counters the last attacker. So let’s say we have a group with Ankh, Momo and Gooru and Ankh attacks first and then Momo and then Gooru. After Gooru finishes his attack he would get countered by the boss and be the only person to receive damage. Now prior to every attack phase taking place the order of people attacking will be shuffled so it’s not always the same person getting countered.</div>
+<div class="line">6) Make sure to keep the Boss’s Defense lower than Player’s Attack at all times so they at least have a chance to beat him</div>
+<div class="line">7) Balance the health based on the Min – Max Entries for this you will have to do a bit of math yourself based on the prior information given such as: Dmg Calculation and Attack Order</div>
+<div class="line">8) The Max Defense a player/boss can have is half their attack if this is higher than it will be capped out during calculation at 50%</div>
+<div class="line">9) Loot will get distributed evenly amongst all of the survivors at the end. In case no one survives then there is no loot to be distributed</div>
+</div>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!boss</p></td>
+<td><p>!boss</p></td>
+<td><p>{user} is trying to get a group of adventurers together to fight a boss!
+Type !boss to join him!</p></td>
+<td><p>JOIN
+PERMISSION</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>The Event System will allow the bot to automatically Greet/Shoutout the person of your choice and play a SFX if you wish. The system consists of two modes Join events and Speak events.</p>
+<p>Join Events will perform its action when the person of your choice joins the channel. Then it will post its message and/or play its SFX.</p>
+<p>Speak Events will perform its action when the person of your choice speaks in your channel for the first time. Then it will post its message and/or play its SFX.</p>
+<p>In order for the bot to re-execute the events it has to be restarted. So the best thing is to restart it before a cast.</p>
+</div>
+<div class="section" id="song-requests">
+<h2>Song Requests<a class="headerlink" href="#song-requests" title="Permalink to this headline">¶</a></h2>
+<p>The Song Request System allow you to create your own youtube playlist through the bot have them play whenever you want. Aside from that your viewers can request songs and spend currency to do so.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Songrequest (url/token)</p></td>
+<td><p>!Songrequest TY9cSlOhqTk</p></td>
+<td><p>{user} –&gt; The song Amv - [MEP] Ѕο Lοng Ѕеntimеnt has been added to the queue</p></td>
+<td><p>REQUEST PERM</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Skip</p></td>
+<td><p>!Skip</p></td>
+<td><p>{user} –&gt; Your vote to skip has been successfully registered!</p></td>
+<td><p>SKIP PERM</p></td>
+</tr>
+<tr class="row-even"><td><p>!Veto</p></td>
+<td><p>!Veto</p></td>
+<td><p>Amv - [MEP] Ѕο Lοng Ѕеntimеnt 720p has been successfully skipped!</p></td>
+<td><p>VETO PERM</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Songblacklist add (id)</p></td>
+<td><p>!songblacklist add dQw4w9WgXcQ</p></td>
+<td><p>{user} –&gt; dQw4w9WgXcQ has been successfully Blacklisted!</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Songblacklist remove (id)</p></td>
+<td><p>!songblacklist remove dQw4w9WgXcQ</p></td>
+<td><p>{user} –&gt; dQw4w9WgXcQ has been successfully Un-Blacklisted!</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Wrongsong</p></td>
+<td><p>!Wrongsong</p></td>
+<td><p>{user}, Successfully removed the last song you requested.</p></td>
+<td><p>EVERYONE</p></td>
+</tr>
+<tr class="row-even"><td><p>!Songlist</p></td>
+<td><p>!Songlist</p></td>
+<td><p>[Create this yourself and point it to
+<a class="reference external" href="https://streamlabs.com">https://streamlabs.com</a>/&lt;your_name&gt;#/chatbot/songlist]</p></td>
+<td><p>EVERYONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Volume (number)</p></td>
+<td><p>!Volume 50</p></td>
+<td><p>{user}, Volume set to 50</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="queue">
+<h2>Queue<a class="headerlink" href="#queue" title="Permalink to this headline">¶</a></h2>
+<p>You can setup a Game Queue using this which allows your viewers to sign up to join you in a multiplayer game. You can have them spend currency to enter and you can even set it to Sub only in case you only want Subscribers to be able to sign up.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 39%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Usage</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Response</p></th>
+<th class="head"><p>Permission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>!Join &lt;note&gt;</p></td>
+<td><p>!Join AnkhHeart#4798</p></td>
+<td><p>[None unless enabled under Settings -&gt; Localization]</p></td>
+<td><p>EVERYONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Queue Open &lt;game&gt;</p></td>
+<td><p>!Queue Open Warframe</p></td>
+<td><p>A queue has opened up for: Warframe - Cost: 0 points -
+Type !join (optional:Note) to join!</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Queue Close</p></td>
+<td><p>!Queue Close</p></td>
+<td><p>The queue has been closed! You can no longer enter!</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Queue Clear</p></td>
+<td><p>!Queue Clear</p></td>
+<td><p>The Queue has been cleared!</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Queue Pick &lt;number&gt;</p></td>
+<td><p>!Queue Pick 3</p></td>
+<td><p>Next up: AnkhHeart, Castorr91, Must13</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>!Queue Random &lt;number&gt;</p></td>
+<td><p>!Queue Random 3</p></td>
+<td><p>Next up: FurRiffic, WellBrained, Ocgineer</p></td>
+<td><p>EDITOR</p></td>
+</tr>
+<tr class="row-even"><td><p>!Leave</p></td>
+<td><p>!Leave</p></td>
+<td><p>AnkhHeart has left the queue.</p></td>
+<td><p>EVERYONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="notifications">
+<h2>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h2>
+<p>You will find various in Chat Notifications here ranging from Follower, Host, Subscriber Notifications to GameWisp Notifications. You can customize each of these to your liking.</p>
+<p>The Follow, Subscriber, Host &amp; Streamlabs notifications require you to have your Streamlabs account connected.</p>
+<p>The Cheer Notifications require you to have your Streamer Account connected.</p>
+<p>The Extra Life Notifications require you to connect your Extra Life Parcipant ID.</p>
+<p>The GameWisp Subscriber Notification is only available if you have connected your Gamewisp Account.</p>
+</div>
+<div class="section" id="mod-tools">
+<h2>Mod Tools<a class="headerlink" href="#mod-tools" title="Permalink to this headline">¶</a></h2>
+<p>Using the Mod Tools you can have the bot punish viewers that post Links without permission, Spam Caps/Symbols or very offensive words/sentences.</p>
+<p>Each of these can be fully customized. When it comes to Link Protection you can exempt certain websites from being punished.</p>
+<p>For the Word/Sentence Blacklist you can also make use wildcards such as * or ?. More information about Wildcards can be found on the internet ex: <a class="reference external" href="https://en.wikipedia.org/wiki/Wildcard_character">https://en.wikipedia.org/wiki/Wildcard_character</a></p>
+</div>
+<div class="section" id="discord">
+<h2>Discord<a class="headerlink" href="#discord" title="Permalink to this headline">¶</a></h2>
+<p>The Discord tab will allow you to activate specific functionality to work in Discord in regards to Timers, automatically assigning a role to everyone and even announcing when you go live.</p>
+<p>More on Discord can be seen in the <span class="target" id="faq">FAQ</span></p>
+</div>
+<div class="section" id="users">
+<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<p>In the Users tab you can see every user’s id, name, whether they’re an editor, external sub or regular. What they’ve been blacklisted from, how many times they’ve raided you and when they were last in your channel. From here you are also able to assign the Editor status to users whom you trust. They are then able to use Editor based chat commands to add, edit, remove commands, currency, start giveaways, etc…</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Streamlabs Chatbot</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#console">Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dashboard">Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timers">Timers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quotes">Quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-quote">Extra Quote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#counter">Counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#giveaway">Giveaway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sound-files">Sound Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#currency">Currency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#betting">Betting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#poll">Poll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#minigames">Minigames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#events">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#song-requests">Song Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queue">Queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notifications">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mod-tools">Mod Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discord">Discord</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users">Users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Permission_Levels_And_Usages.html">Permission Levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Permission_Levels_And_Usages.html#usage-levels">Usage Levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameters</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to Streamlabs Chatbot documentation!</a></li>
+      <li>Next: <a href="settings.html" title="next chapter">Settings</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, AnkhHeart.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/slcb/core_functions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
