@@ -16,7 +16,7 @@ Documentation Contents
 
 
 extra
-------
+-----
 can't find what you're looking for?
 
 * :ref:`genindex`
