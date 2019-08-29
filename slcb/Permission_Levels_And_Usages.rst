@@ -1,3 +1,4 @@
+.. currentmodule:: Streamlabs Chatbot (Twitch)
 .. _permission levels:
 .. _perms:
 
@@ -36,7 +37,6 @@ Special Permissions
 +-----------------+---------------------------+--------------------------+
 
 .. _usage levels:
-.. _usage:
 
 Usage Levels
 ------------

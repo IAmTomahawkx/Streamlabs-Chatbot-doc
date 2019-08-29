@@ -1,6 +1,7 @@
+.. currentmodule:: Features
 .. _features:
 
-features
+Features
 ========
 
 .. _console:
@@ -343,7 +344,6 @@ In the Free for All minigame multiple viewers can face off against one another. 
 +----------------------------------------------------+--------------------------------------------------------+-------------------------------------------------------------------------------+--------------+
 
 .. _boss battle:
-.. _boss:
 
 Boss Battle
 +++++++++++

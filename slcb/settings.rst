@@ -1,3 +1,4 @@
+.. currentmodule:: Settings
 .. _settings:
 
 Settings
