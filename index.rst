@@ -11,6 +11,7 @@ Documentation Contents
 
 .. toctree::
    :maxdepth: 2
+
    slcb/index.rst
 
 
