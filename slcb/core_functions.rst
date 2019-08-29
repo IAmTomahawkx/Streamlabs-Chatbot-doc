@@ -37,7 +37,7 @@ The Session Event View which is located at the bottom of the Dashboard will have
 | !StopHost              | !StopHost                     | {user} --> Stopped Automated Hosting!                  |
 +------------------------+-------------------------------+--------------------------------------------------------+
 
-.. _commands
+.. _commands:
 
 Commands
 --------
@@ -471,6 +471,7 @@ The Discord tab will allow you to activate specific functionality to work in Dis
 More on Discord can be seen in the :ref:`faq`
 
 .. _users:
+.. _faq:
 
 Users
 -----
