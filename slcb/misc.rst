@@ -86,7 +86,7 @@ connect to the server.
 Creating Scripts
 -----------------
 *One of Us. One of Us.*
-If you're going to create scripts, check out the [boilerplate](https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate )
-and the [wiki](https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate/wiki )
+If you're going to create scripts, check out the <boilerplate https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate>_
+and the <wiki https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate/wiki>_
 
 Also, join us in **Script-Devs** on the Streamlabs Chatbot discord server!

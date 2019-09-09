@@ -12,13 +12,11 @@ Any efforts to improve this documentation can be sent to me on discord,
 or emailed to me at iamtomahawkx@gmail.com . Preferably don't add a pull request to the github repo, as i rarely look at github :P
 
 Although these docs are mostly taken from the original documentation,
-if you would like the official documentation, it can be seen [here](link).
+if you would like the official documentation, it can be seen <here https://cdn.streamlabs.com/chatbot/Documentation_Twitch.pdf>_ .
 
 Another note: this documentation is all designed
 with Twitch in mind. if you stream on Youtube or Mixer, you'll need to use the other docs until i finish those platforms
 (soon™). Sorry!
-
-.. note to self: get the documentation link!
 
 Documentation Contents
 -----------------------
