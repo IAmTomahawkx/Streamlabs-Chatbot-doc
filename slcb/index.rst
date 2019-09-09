@@ -5,3 +5,4 @@
    settings
    Permission_Levels_And_Usages
    parameters
+   misc

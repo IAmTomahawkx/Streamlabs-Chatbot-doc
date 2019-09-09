@@ -1,5 +1,4 @@
 .. currentmodule:: Features
-.. _features:
 
 Features
 ========
@@ -8,7 +7,6 @@ Features
 
 Console
 --------
-.. function:: test
 
 On the console you will see all the incoming chat messages and the viewer list.
 In case you dislike seeing who’s watching you can simply click the small button left of the viewer list to dock it to the side.
@@ -468,10 +466,9 @@ Discord
 -------
 The Discord tab will allow you to activate specific functionality to work in Discord in regards to Timers, automatically assigning a role to everyone and even announcing when you go live.
 
-More on Discord can be seen in the :ref:`faq`
+More on Discord can be seen in the Faq
 
 .. _users:
-.. _faq:
 
 Users
 -----

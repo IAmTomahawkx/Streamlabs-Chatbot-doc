@@ -5,6 +5,20 @@
 
 Welcome to the Streamlabs Chatbot documentation
 ===============================================
+I (IAmTomahawkx) would like to alert you that this is *not* the Official Streamlabc Chatbot Documentation.
+I made this documentation so i could point people at a specific part of the documentation, instead of simply pointing
+at the documentation link and saying "figure it out". Also because I figured the docs were due for an update.
+Any efforts to improve this documentation can be sent to me on discord,
+or emailed to me at iamtomahawkx@gmail.com . Preferably don't add a pull request to the github repo, as i rarely look at github :P
+
+Although these docs are mostly taken from the original documentation,
+if you would like the official documentation, it can be seen [here](link).
+
+Another note: this documentation is all designed
+with Twitch in mind. if you stream on Youtube or Mixer, you'll need to use the other docs until i finish those platforms
+(soon™). Sorry!
+
+.. note to self: get the documentation link!
 
 Documentation Contents
 -----------------------
@@ -14,10 +28,16 @@ Documentation Contents
 
    slcb/index.rst
 
+Frequently Asked Questions
+--------------------------
+.. toctree::
+   :maxdepth: 2
 
-extra
+   faq
+
+Extra
 -----
 can't find what you're looking for?
 
-* :ref:`genindex`
 * :ref:`search`
+* Join the Discord
