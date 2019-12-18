@@ -20,6 +20,8 @@ Dashboard
 | In order to access the full capability of the Dashboard you need to have your own Twitch account connected under Connections -> Twitch Streamer.
 | This should be done if you followed the entire setup guide in the beginning.
 
+.. note:: You must be a Twitch Partner to use the commercials feature. Affilates are unable to use it at this time.
+
 This is where you will be able to change your Title & Game, run commercials if you’re partnered with Twitch, have the bot automatically host streams of your choosing and where the bot will track news Followers, Subscribers, Raiders, Hosts and GameWisp Subscribers.
 We also have Raid Assist which is a system which allows you to reward viewers for joining you on a raid.
 The Session Event View which is located at the bottom of the Dashboard will have to be manually cleared before each stream by right clicking and Clearing the data. Otherwise new Hosts, Raids, Subs/Resubs won't be logged if they're done by the same person.
@@ -220,7 +222,10 @@ The bot also supports Streamlabs currency. For this you need to connect Streamla
 
 You can create up to four Ranking Trees: One for Viewers, Subscribers, Mods and GameWisp Subscribers. Ranks are only assigned whenever the bot pays out points or when you use !points add +viewers 1 for example.
 
-There is also room for customizing your own Payout amounts and intervals. This way you have full control over how many points people can accumulate in your stream.
+.. note:: this is not the same as loyalty points. those are a separate thing.
+.. note:: When using the extension currency, you cannot edit the hours of users from the chatbot.
+
+There is also room for customizing your own Payout amounts and intervals when using the local currency. This way you have full control over how many points people can accumulate in your stream.
 
 If the Offline Payout amount is set to 0 the bot will not pay out any points with the stream is offline. Also replace !points with your own custom currency command.
 
@@ -465,12 +470,14 @@ For the Word/Sentence Blacklist you can also make use wildcards such as \* or ?.
 Discord
 -------
 The Discord tab will allow you to activate specific functionality to work in Discord in regards to Timers, automatically assigning a role to everyone and even announcing when you go live.
+Note that you can only have one channel for interacting with the bot, and they must use the !linkdiscord command to be able to interact with the discord bot (more on that in the :ref:`faq <faq>`)
 
-More on Discord can be seen in the Faq
+More on Discord can be seen in the :ref:`faq <faq>`
 
 .. _users:
 
 Users
 -----
 
-In the Users tab you can see every user’s id, name, whether they’re an editor, external sub or regular. What they’ve been blacklisted from, how many times they’ve raided you and when they were last in your channel. From here you are also able to assign the Editor status to users whom you trust. They are then able to use Editor based chat commands to add, edit, remove commands, currency, start giveaways, etc...
+In the Users tab you can see every user’s id, name, whether they’re an editor, external sub or regular. What they’ve been blacklisted from, how many times they’ve raided you and when they were last in your channel.
+From here you are also able to assign the Editor status to users whom you trust. They are then able to use Editor based chat commands to add, edit, remove commands, currency, start giveaways, etc...
