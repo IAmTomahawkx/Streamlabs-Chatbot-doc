@@ -2,6 +2,9 @@
 
 .. _dev-docs:
 
+The Parent Object
+=====================
+
 .. class:: PythonManager
     Your main link to the chatbot
 

@@ -1,4 +1,4 @@
-.. currentmodule:: Streamlabs Chatbot (Twitch)
+.. currentmodule:: misc
 
 Generated Text Files
 =====================

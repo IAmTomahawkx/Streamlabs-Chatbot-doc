@@ -1,4 +1,4 @@
-.. currentmodule:: Streamlabs Chatbot (Twitch)
+.. currentmodule:: Permission levels
 .. _permission levels:
 .. _perms:
 
