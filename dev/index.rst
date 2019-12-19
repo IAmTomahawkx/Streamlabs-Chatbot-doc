@@ -7,6 +7,6 @@ Welcome to the Streamlabs Chatbot Scripting Documentation
 This is an extension of the Streamlabs Chatbot docs, meant for the devs.
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
+
     developer
-    utilities
