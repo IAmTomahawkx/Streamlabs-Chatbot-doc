@@ -35,7 +35,8 @@ Frequently Asked Questions
 
 Extra
 -----
+* :ref:`Developer Documentation <dev-index>`
 can't find what you're looking for?
 
 * :ref:`search`
-* Join the Discord
+* Join the `Streamlabs Chatbot Discord <https://discord.gg/xFcsxft>`_

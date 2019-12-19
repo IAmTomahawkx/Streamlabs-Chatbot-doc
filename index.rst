@@ -35,6 +35,7 @@ Frequently Asked Questions
 
 Extra
 -----
+* :ref:`Developer Documentation <dev-index>`
 can't find what you're looking for?
 
 * :ref:`search`
