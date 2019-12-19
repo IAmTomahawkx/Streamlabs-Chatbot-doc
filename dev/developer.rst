@@ -6,9 +6,11 @@ The Parent Object
 =====================
 
 .. class:: PythonManager
+
     Your main link to the chatbot
 
     .. function:: AddPoints(userid, username, amount)
+
         Adds points to the target user
 
         Parameters
@@ -22,6 +24,7 @@ The Parent Object
 
 
     .. function:: RemovePoints(userid, username, amount)
+
         Removes points from the target user
 
         Parameters
@@ -31,6 +34,7 @@ The Parent Object
         :param amount: :class:`int` the amount of points you wish to remove
 
     .. function:: AddPointsAll(data)
+
         batch adds points to many users at once
 
         Parameters
