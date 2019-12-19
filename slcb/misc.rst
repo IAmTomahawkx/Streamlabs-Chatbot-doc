@@ -84,6 +84,7 @@ file so it uses the appropriate key. This key is used as a password so only clie
 connect to the server.
 
 If a script asks for the api key inside it's UI, here's one way you can get it:
+
 .. image:: /images/instructions.jpg
     :alt: How to get your API key off the Website
 
