@@ -385,7 +385,7 @@ Speak Events will perform its action when the person of your choice speaks in yo
 
 In order for the bot to re-execute the events it has to be restarted. So the best thing is to restart it before a cast.
 
-.. _song requests:
+.. _song-requests:
 .. _sr:
 
 Song Requests
