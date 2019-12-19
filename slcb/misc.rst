@@ -57,18 +57,18 @@ Setup
 -----
 To use scripts, you'll need two thing.
 
-- you'll need to install Python 2.7. You can download it [Here](https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi)
-  after installing Python, you will need to open the settings in the scripts tab of your chatbot, select Folder, and set it
+- you'll need to install Python 2.7. You can download it `Here <https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi>`_.
+  After installing Python, you will need to open the settings in the scripts tab of your chatbot, select Folder, and set it
   to **C:\\Python27\\Lib** . This can vary from the one that I am referring to since it all depends on where you installed Python.
   Once you've found the Lib folder select it and hit Save.
 
 .. warning::
   Do **not** use *any* other version of Python. It will not work for the chatbot.
 
-- you'll need scripts *(suprise!)*. although any scripts you find online will (most likely) *work*, they could cause harm
-  to your computer. Scripts do have access to all your files (as any program does) aand you need to be cautious when installing
-  them. On the Streamlabs Chatbot discord (note that it is seperate from the Streamlabs discord), you will find scripts that
-  have been checked by trusted people, and are safe to use.
+- you'll need scripts *(surprise!)*. although any scripts you find online will (most likely) *work*, they could cause harm
+  to your computer. Scripts do have access to all your files (as any program does) and you need to be cautious when installing
+  them. On the Streamlabs Chatbot discord (note that it is separate from the Streamlabs discord), you will find scripts that
+  have been checked by trusted staff, and are safe to use.
 
 Importing Scripts
 ------------------
@@ -83,10 +83,14 @@ The Api Key in question can be refreshed whenever you wish. Though in this case 
 file so it uses the appropriate key. This key is used as a password so only clients which you have granted access may
 connect to the server.
 
+If a script asks for the api key inside it's UI, here's one way you can get it:
+.. image:: /images/instructions.jpg
+    :alt: How to get your API key off the Website
+
 Creating Scripts
 -----------------
-*One of Us. One of Us.*
-If you're going to create scripts, check out the <boilerplate https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate>_
-and the <wiki https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate/wiki>_
+*One of Us! One of Us!*
+If you're going to create scripts, check out the `boilerplate <https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate>`_
+and the `wiki <https://github.com/AnkhHeart/Streamlabs-Chatbot-Python-Boilerplate/wiki>`_
 
-Also, join us in **Script-Devs** on the Streamlabs Chatbot discord server!
+Also, join us in **Script-Devs** on the Streamlabs Chatbot `discord server <https://discord.gg/xFcsxft>`_!
