@@ -15,7 +15,8 @@ The Parent Object
         Adds points to the target user
 
         Parameters
-        -----------
+        ----------------
+
         :param userid: the userid of the person you wish to add points to. On twitch this is generally the lowercase version of the username, but on mixer and youtube it will be something else
         :type userid: :class:`str`
         :param username: the username of the person you wish to add points to. this is not the same as the userid. it can be fetched using :meth:`~.GetDsiplayName`
@@ -25,6 +26,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`bool` based on if the operation succeeded or not
 
     .. function:: RemovePoints(userid, username, amount)
@@ -32,13 +34,15 @@ The Parent Object
         Removes points from the target user
 
         Parameters
-        ------------
+        ----------------
+-
         :param userid: :class:`str` the userid of the person you wish to remove points from. On twitch this is generally the lowercase version of the username, but on mixer and youtube it will be something else
         :param username: :class:`str` the username of the person you wish to remove points from. this is not the same as the userid. it can be fetched using :meth:`~.GetDsiplayName`
         :param amount: :class:`int` the amount of points you wish to remove
 
         Returns
         --------
+
         :returns: :class:`bool` based on if the operation succeeded or not
 
     .. function:: AddPointsAll(data)
@@ -46,12 +50,14 @@ The Parent Object
         batch adds points to many users at once. blocks until the procedure is done
 
         Parameters
-        -----------
+        ----------------
+
         :param data: Dict[:class:`str` userid, :class:`int` amount]
         :type data: :class:`dict`
 
         Returns
-        ---------
+        --------
+-
         :returns: Dict[:class:`str`]
             a list of users that could not have points added to them
 
@@ -60,7 +66,8 @@ The Parent Object
         batch adds points to many users at once. returns immediately, and runs the callback when complete
 
          Parameters
-        -----------
+        ----------------
+
         :param data: Dict[:class:`str` userid, :class:`int` amount]
         :type data: :class:`dict`
         :param callback: called when the operation is complete. should take a list of userids (:class:`str`) as its sole argument.
@@ -71,12 +78,14 @@ The Parent Object
         batch removes points to many users at once. blocks until the procedure is done
 
         Parameters
-        -----------
+        ----------------
+
         :param data: Dict[:class:`str` userid, :class:`int` amount]
         :type data: :class:`dict`
 
         Returns
-        ---------
+        --------
+-
         :returns: Dict[:class:`str`]
             a list of users that could not have points removed from them
 
@@ -85,7 +94,8 @@ The Parent Object
         batch removes points to many users at once. returns immediately, and runs the callback when complete
 
          Parameters
-        -----------
+        ----------------
+
         :param data: Dict[:class:`str` userid, :class:`int` amount]
         :type data: :class:`dict`
         :param callback: called when the operation is complete. should take a list of userids (:class:`str`) as its sole argument.
@@ -96,12 +106,14 @@ The Parent Object
         retrieves a users points
 
         Parameters
-        -----------
+        ----------------
+
         :param userid: the userid of the user to get points for
         :type userid: :class:`str`
 
         Returns
         --------
+
         :returns: :class:`int` the points the user has
 
     .. function:: GetRank(userid)
@@ -109,12 +121,14 @@ The Parent Object
         retrieves a users rank
 
         Parameters
-        -----------
+        ----------------
+
         :param userid: the userid of the user to get rank for
         :type userid: :class:`str`
 
         Returns
         --------
+
         :returns: :class:`str` the rank the user has
 
     .. function:: GetHours(userid)
@@ -122,12 +136,14 @@ The Parent Object
         retrieves a users hours
 
         Parameters
-        -----------
+        ----------------
+
         :param userid: the userid of the user to get hours for
         :type userid: :class:`str`
 
         Returns
         --------
+
         :returns: :class:`float` the hours the user has watched for
 
     .. function:: GetTopCurrency(n)
@@ -135,12 +151,14 @@ The Parent Object
         retrieves the top ``n`` users based on currency
 
         Parameters
-        ------------
+        ----------------
+-
         :param n: the amount of users to get
         :type n: :class:`int`
 
         Returns
         --------
+
         :returns: Dict[userid: points] a dict of userids to points.
 
     .. function:: GetTopHours(n)
@@ -148,12 +166,14 @@ The Parent Object
         retrieves the top ``n`` users based on hour
 
         Parameters
-        ------------
+        ----------------
+-
         :param n: the amount of users to get
         :type n: :class:`int`
 
         Returns
         --------
+
         :returns: Dict[userid: points] a dict of userids to hours.
 
     .. function:: GetCurrencyUsers(userids)
@@ -161,12 +181,14 @@ The Parent Object
         retrieves a list of :class:`~Currency` objects
 
         Parameters
-        -----------
+        ----------------
+
         :param userids: a list of userids
         :type userids: :class:`list`
 
         Returns
         --------
+
         :returns: a :class:`list` of :class:`~Currency` objects
 
     .. function:: SendStreamMessage(text):
@@ -174,7 +196,8 @@ The Parent Object
         sends a message to the stream chat
 
         Parameters
-        -----------
+        ----------------
+
         :param text: the message to be sent
         :type text: :class:`str`
 
@@ -187,7 +210,8 @@ The Parent Object
         .. warning:: twitch whispers are *very* unreliable. Avoid using them if possible
 
         Parameters
-        -----------
+        ----------------
+
         :param userid: the id of the user to send the message to
         :type userid: :class:`str`
         :param text: the message to whisper to the user
@@ -201,7 +225,8 @@ The Parent Object
         .. note:: this only works if the streamer has set up discord
 
         Parameters
-        -----------
+        ----------------
+
         :param text: the message to be sent
         :type text: :class:`str`
 
@@ -213,7 +238,8 @@ The Parent Object
         .. note:: this only works if the streamer has set up discord
 
         Parameters
-        -----------
+        ----------------
+
         :param userid: the id of the user to send the message to
         :type userid: :class:`str`
         :param text: the message to whisper to the user
@@ -227,7 +253,8 @@ The Parent Object
             Parent.BroadcastWSEvent("EVENT_SHOW_COUNTER", '{"show":false}')
 
         Parameters
-        -----------
+        ----------------
+
         :param event_name: The name of the event.
         :type event_name: :class:`str`
         :param json_data: the json data associated with the event. usually you would pass the output of ``json.dumps``
@@ -238,7 +265,8 @@ The Parent Object
         checks if a user has a certain permission. a list of permissions can be found `here <link>`_.
 
         Parameters
-        -----------
+        ----------------
+
         :param userid: a string with the userid of the target user
         :type userid: :class:`str`
         :param permission: a string containing the permission you wish to check for
@@ -248,6 +276,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`bool`
 
     .. function:: GetViewerList()
@@ -256,6 +285,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: a :class:`list` of userids
 
     .. function:: GetActiveViewers()
@@ -264,12 +294,14 @@ The Parent Object
 
         Returns
         --------
+
         :returns: a :class:`list` of userids
 
     .. function:: GetRandomActiveViewer()
 
         Returns
         --------
+
         :returns: :class:`str`
 
     .. function:: GetDisplayName(userid)
@@ -277,7 +309,8 @@ The Parent Object
         gets a displayname based off the given userid
 
         Parameters
-        ------------
+        ----------------
+-
         :param userid: the userid to fetch a username for
         :type userid: :class:`str`
 
@@ -286,7 +319,8 @@ The Parent Object
         Adds a cooldown to the internal cooldown manager
 
         Parameters
-        -----------
+        ----------------
+
         :param script_name: the name of your script
         :type script_name: :class:`str`
         :param command: the name of the command on cooldown
@@ -299,7 +333,8 @@ The Parent Object
         checks if a command is on cooldown
 
         Parameters
-        -----------
+        ----------------
+
         :param script_name: the name of your script
         :type script_name: :class:`str`
         :param command: the name of the command on cooldown
@@ -307,6 +342,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`bool`
 
     .. function:: GetCooldownDuration(script_name, command)
@@ -314,7 +350,8 @@ The Parent Object
         fetches the remainder of the cooldown
 
         Parameters
-        -----------
+        ----------------
+
         :param script_name: the name of your script
         :type script_name: :class:`str`
         :param command: the name of the command on cooldown
@@ -322,6 +359,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`int`
 
     .. function:: AddUserCooldown(script_name, command, user, seconds)
@@ -329,7 +367,8 @@ The Parent Object
         Adds a user cooldown to the internal cooldown manager
 
         Parameters
-        -----------
+        ----------------
+
         :param script_name: the name of your script
         :type script_name: :class:`str`
         :param command: the name of the command on cooldown
@@ -344,7 +383,8 @@ The Parent Object
         checks if a command is on user cooldown
 
         Parameters
-        -----------
+        ----------------
+
         :param script_name: the name of your script
         :type script_name: :class:`str`
         :param command: the name of the command on cooldown
@@ -354,6 +394,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`bool`
 
     .. function:: GetUserCooldownDuration(script_name, command, user)
@@ -361,7 +402,8 @@ The Parent Object
         fetches the remainder of the cooldown for a user
 
         Parameters
-        -----------
+        ----------------
+
         :param script_name: the name of your script
         :type script_name: :class:`str`
         :param command: the name of the command on cooldown
@@ -371,6 +413,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`int`
 
     .. function:: GetRequest(url, headers)
@@ -389,7 +432,8 @@ The Parent Object
         POSTs to an api
 
         Parameters
-        -----------
+        ----------------
+
         :param url: the url to send the request to
         :type url: :class:`str`
         :param headers: the headers for the api
@@ -415,7 +459,8 @@ The Parent Object
         PUTs to an api
 
         Parameters
-        -----------
+        ----------------
+
         :param url: the url to send the request to
         :type url: :class:`str`
         :param headers: the headers for the api
@@ -431,6 +476,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`bool`
 
     .. function:: GetRandom(min, max)
@@ -442,7 +488,8 @@ The Parent Object
             random = random.WhichmannHill()
 
         Parameters
-        -----------
+        ----------------
+
         :param min: the minimum number
         :type min: :class:`int`
         :param max: the maximum number
@@ -450,6 +497,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`int`
 
     .. function:: GetStreamingService()
@@ -458,6 +506,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`str`
 
     .. function:: GetChannelName()
@@ -468,6 +517,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: :class:`str`
 
     .. function:: GetCurrencyName()
@@ -483,7 +533,8 @@ The Parent Object
         logs data to the chatbot's logging window
 
         Parameters
-        -----------
+        ----------------
+
         :param script_name: the name of your script
         :type script_name: :class:`str`
         :param message: the message to log
@@ -494,14 +545,16 @@ The Parent Object
         Attempts to play a sound, if possible, returns whether the sound was played or not
 
         Parameters
-        -----------
+        ----------------
+
         :param file_path: the path of the file to play
         :type file_path: :class:`str`
         :param volume: a number between 0 and 1, how loud the sound should be
         :type volume: :class:`float`
 
         Returns
-        ---------
+        --------
+-
         :returns: :class:`bool`
 
     .. function:: GetQueue(n)
@@ -509,12 +562,14 @@ The Parent Object
         Retrieves `n` number of people in the queue at the moment
 
         Parameters
-        -----------
+        ----------------
+
         :param n: the amount of people to get
         :type n: :class:`int`
 
         Returns
         --------
+
         :returns: Dict[:class:`int`: :class:`str`]
 
     .. function:: GetSongQueue(max)
@@ -522,12 +577,14 @@ The Parent Object
         gets the next `n` songs in the song queue
 
         Parameters
-        -----------
+        ----------------
+
         :param n: the amount of songs to get
         :type n: :class:`int`
 
         Returns
         --------
+
         :returns: List[:class:`~Song`]
 
     .. function:: GetSongPlaylist(max)
@@ -535,12 +592,14 @@ The Parent Object
         gets the next `n` songs in the playlist
 
         Parameters
-        -----------
+        ----------------
+
         :param n: the amount of songs to get
         :type n: :class:`int`
 
         Returns
         --------
+
         :returns: List[:class:`~Song`]
 
     .. function:: GetNowPlaying()
@@ -549,6 +608,7 @@ The Parent Object
 
         Returns
         --------
+
         :returns: NamedTuple[Key: :class:`str`, Value: :class:`str`]
 
 
