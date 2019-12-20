@@ -1,3 +1,4 @@
+.. currentmodule:: faq
 .. _faq:
 
 FAQ
