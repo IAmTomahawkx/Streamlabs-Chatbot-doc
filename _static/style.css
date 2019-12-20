@@ -40,13 +40,13 @@ div.bodywrapper {
 }
 
 div.body {
-  background-color: #ffffff;
+  background-color: #505050;
   color: #3e4349;
   padding: 0 30px 30px 30px;
 }
 
 div.footer {
-  color: #555;
+  color: #505050;
   font-size: 14px;
   margin: 20px auto 30px auto;
   text-align: right;
@@ -83,9 +83,9 @@ div.sphinxsidebarwrapper {
   overflow: hidden;
 }
 
-/* show scrollbar on hover */
+/* always show the sidebar */
 div.sphinxsidebarwrapper:hover {
-  overflow: auto;
+  overflow: fixed;
 }
 
 div.sphinxsidebar h3,
