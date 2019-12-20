@@ -35,7 +35,6 @@ The Parent Object
 
         Parameters
         ----------------
--
         :param userid: :class:`str` the userid of the person you wish to remove points from. On twitch this is generally the lowercase version of the username, but on mixer and youtube it will be something else
         :param username: :class:`str` the username of the person you wish to remove points from. this is not the same as the userid. it can be fetched using :meth:`~.GetDsiplayName`
         :param amount: :class:`int` the amount of points you wish to remove
@@ -57,7 +56,6 @@ The Parent Object
 
         Returns
         --------
--
         :returns: Dict[:class:`str`]
             a list of users that could not have points added to them
 
@@ -85,7 +83,6 @@ The Parent Object
 
         Returns
         --------
--
         :returns: Dict[:class:`str`]
             a list of users that could not have points removed from them
 
@@ -152,7 +149,6 @@ The Parent Object
 
         Parameters
         ----------------
--
         :param n: the amount of users to get
         :type n: :class:`int`
 
@@ -167,7 +163,6 @@ The Parent Object
 
         Parameters
         ----------------
--
         :param n: the amount of users to get
         :type n: :class:`int`
 
@@ -310,7 +305,6 @@ The Parent Object
 
         Parameters
         ----------------
--
         :param userid: the userid to fetch a username for
         :type userid: :class:`str`
 
@@ -554,7 +548,6 @@ The Parent Object
 
         Returns
         --------
--
         :returns: :class:`bool`
 
     .. function:: GetQueue(n)
