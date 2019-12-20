@@ -54,8 +54,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 master_doc = 'index'
 
-
-
 # Links used for cross-referencing stuff in other documentation
 intersphinx_mapping = {
   'py': ('https://docs.python.org/2', None)
@@ -82,7 +80,6 @@ html_search_scorer = '_static/scorer.js'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
 
 def setup(app):
   app.add_javascript('custom.js')

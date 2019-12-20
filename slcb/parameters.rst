@@ -247,6 +247,7 @@ Twitch API Parameters
 +--------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------+----------------------------------+
 | $setgame(game) and       |Allows you to set the game & title through a command and create presets for certain games                |$setgame(Dungeon Defenders II)                     |No response as the bot will       |
 | $settitle(title)         |                                                                                                         |$settitle(MMO Mornings)  | !dd2                    |simply update the game & title    |
++--------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------+----------------------------------+
 
 File Reading Parameters
 ==========================

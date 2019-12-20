@@ -3,6 +3,7 @@
 {% set show_source = False %}
 {% set style = 'style.css' %}
 
+
 {%- block extrahead %}
   {{ super() }}
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
@@ -19,6 +20,7 @@
 
 
 {%- block footer %}
+  <link rel="stylesheet" type="text/css" href="_static/custom.css">
   <div class="footer">
     &copy; Copyright {{ copyright }}.
     {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
