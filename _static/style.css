@@ -287,7 +287,7 @@ div.topic {
 /* don't link-ify the FAQ page */
 a.toc-backref {
   text-decoration: none;
-  color: #3e4349;
+  color: #e6e6e6;
 }
 
 /* bold and fix the Parameter, Raises, etc. */
@@ -522,7 +522,7 @@ div.code-block-caption {
 
   div.footer {
     background-color: #505050;
-    color: #505050;
+    color: #dbdbdb;
     margin: 0;
     padding: 10px 20px 20px;
     text-align: left;
@@ -534,7 +534,7 @@ div.code-block-caption {
   }
 
   div.footer a:hover {
-    color: #fff;
+    color: #5d5d5d;
   }
 
   div.sphinxsidebar {
@@ -559,15 +559,15 @@ div.code-block-caption {
   }
 
   div.sphinxsidebar ul {
-    color: #999;
+    color: #ffffff;
   }
 
   div.sphinxsidebar a {
-    color: #aaa;
+    color: #ffffff;
   }
 
   div.sphinxsidebar a:hover {
-    color: #fff;
+    color: #ffffff;
   }
 
   .active {
