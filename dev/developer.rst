@@ -8,7 +8,7 @@ The Parent Object
 
 .. class:: PythonManager
 
-    Your main link to the chatbot
+    Your main link to the chatbot. OBS controls are not documented
 
     .. function:: AddPoints(userid, username, amount)
 
@@ -244,7 +244,7 @@ The Parent Object
 
         sends a message to connected overlays, should look something like
 
-        .. code-block::
+        .. code-block:: python
             Parent.BroadcastWSEvent("EVENT_SHOW_COUNTER", '{"show":false}')
 
         Parameters
@@ -257,7 +257,7 @@ The Parent Object
 
     .. function:: HasPermission(userid, permission, info)
 
-        checks if a user has a certain permission. a list of permissions can be found `here <link>`_.
+        checks if a user has a certain permission. a list of permissions can be found :ref:`permission-levels-dev`.
 
         Parameters
         ----------------
@@ -281,7 +281,7 @@ The Parent Object
         Returns
         --------
 
-        :returns: a :class:`list` of userids
+        :returns: :class:`list` of userids
 
     .. function:: GetActiveViewers()
 
@@ -290,7 +290,7 @@ The Parent Object
         Returns
         --------
 
-        :returns: a :class:`list` of userids
+        :returns: :class:`list` of userids
 
     .. function:: GetRandomActiveViewer()
 
@@ -421,6 +421,8 @@ The Parent Object
         :param headers: the headers for the api
         :type headers: :class:`dict`
 
+        :returns: :class:`str` A JSON dict containing the response data. Will contain the fields `status` and optionally `response` or `error`
+
     .. function:: PostRequest(url, headers, content, is_json=True)
 
         POSTs to an api
@@ -436,6 +438,7 @@ The Parent Object
         :type content: Union[:class:`str`, :class:`dict`]
         :param is_json: indicates whether the data should be jsonified or not
         :type is_json: :class:`bool`
+        :returns: ?
 
     .. function:: DeleteRequest(url, headers)
 
@@ -447,6 +450,7 @@ The Parent Object
         :type url: :class:`str`
         :param headers: the headers for the api
         :type headers: :class:`dict`
+        :returns: ?
 
     .. function:: PutRequest(url, headers, content, is_json=True)
 
@@ -463,6 +467,7 @@ The Parent Object
         :type content: Union[:class:`str`, :class:`dict`]
         :param is_json: indicates whether the data should be jsonified or not
         :type is_json: :class:`bool`
+        :returns: ?
 
     .. function:: IsLive()
 
@@ -477,7 +482,7 @@ The Parent Object
 
         a replacement for the default `random` module, which is broken in ironpython. this can be fixed however, by doing the following
 
-        .. code-block::
+        .. code-block:: python
             import random
             random = random.WhichmannHill()
 
@@ -637,28 +642,145 @@ The Currency Object
 The Song Object
 =================
 
-.. _song-object::
+.. _song-object:
 
 .. class:: Song
 
     a song request, returned by GetSongQueue
 
-    .. attribute:: Title
+    .. py:attribute:: Title
 
         :class:`str` the title of the song
 
-    .. attribute:: RequestedBy
+    .. py:attribute:: RequestedBy
 
         :class:`str` the requester of the song. this is their userid
 
-    .. attribute:: RequestedByName
+    .. py:attribute:: RequestedByName
 
         :class:`str` the requester of the song. this is their username
 
-    .. attribute:: ID
+    .. py:attribute:: ID
 
         :class:`str` the id of the song
 
-    .. attribute:: URL
+    .. py:attribute:: URL
 
         :class:`str` the URL of the song
+
+.. _permission-levels-dev:
+
+Dev Permission Levels
+=====================
+These are passed to :class:`~PythonManager.HasPermission`
+
++-----------------+----------------------------------+
+|  Permisssion    |  Who is it                       |
++=================+==================================+
+|  Caster         |  The Streamer                    |
++-----------------+----------------------------------+
+|  Editor         | A Chatbot editor                 |
++-----------------+----------------------------------+
+|  Moderator      | A Stream moderator               |
++-----------------+----------------------------------+
+|  VIP+           | A VIP or a subscriber            |
++-----------------+----------------------------------+
+|  VIP            | A VIP on stream                  |
++-----------------+----------------------------------+
+|  Subscriber     | A subscriber on the platform     |
++-----------------+----------------------------------+
+|  Regular        | A Chatbot regular                |
++-----------------+----------------------------------+
+
+.. _data-object::
+
+The Data object
+================
+This will be passed to `Execute`
+
+.. class:: Data
+
+    The object passed to `Execute`
+
+    .. py:attribute:: User
+
+        :class:`str` The user's userid
+
+    .. py:attribute:: UserName
+
+        :class:`str` The user's username
+
+    .. py:attribute:: Message
+
+        :class:`str` The message sent
+
+    .. py:attribute:: RawData
+
+        :class:`str` The raw data (Ex. the IRC data if from twitch)
+
+    .. py:attribute:: ServiceType
+
+        Unknown
+
+    .. py:function:: IsChatMessage()
+
+        Checks if the data is for a chat message
+
+        :returns: :class:`bool`
+
+    ..  py:function:: IsRawData()
+
+        checks if the data is unparsed, Ex. a raid message through twitch IRC
+
+        :returns: :class:`bool`
+
+    .. py:function:: IsFromTwitch()
+
+        checks if the data came from twitch
+
+        :returns: :class:`bool`
+
+    .. py:function:: IsFromYoutube()
+
+        checks if the data came from youtube
+
+        :returns: :class:`bool`
+
+    .. py:function:: IsFromMixer()
+
+        checks if the data came from mixer
+
+        .. note::
+            mixer has shut down, this will never return true anymore
+
+        :returns: :class:`bool`
+
+    .. py:function:: IsFromDiscord()
+
+        checks if the data came from discord
+
+        :returns: :class:`bool`
+
+    .. py:function:: IsWhisper()
+
+        checks if the data is a whisper/dm
+
+        :returns: :class:`bool`
+
+    .. py:function:: GetParam(n)
+
+        gets an argument from the :ref:`~Data.Message`
+
+        Parameters
+        -----------
+        :param n: the index to get from
+        :type n: :class:`int`
+
+        :returns: :class:`str`
+
+    .. py:function:: GetParamCount()
+
+        returns the amount of parameters the message contains
+
+        :returns: :class:`int`
+
